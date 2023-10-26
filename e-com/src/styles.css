@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: sans-serif;
+}
+.container{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.common-form{
+text-align: center;
+display: flex;
+margin: auto;
+flex-direction: column;
+width: 350px;
+}
+.form-input{
+    height: 40x;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-radius: 5px ;
+    border: 1px solid blueviolet;
+    color: blueviolet;
+
+
+}
+.form-button{
+    height: 35px;
+    border: 1px solid blueviolet;
+    cursor: pointer;
+    border-radius: 10px ;
+    background: rgb(42, 42, 200);
+    color: rgb(231, 218, 218);
+
+}
+.error-p{
+    color: red;
+}
+.p-message{
+    color: green;
+}
+.carousel-control-prev-icon,.carousel-control-next-icon{
+    background-color: black;
+    border: 5px;
+}
+.carousel-caption{
+    background-color: rgb(222, 198, 198);
+    border-radius: 10px;
+}

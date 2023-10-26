@@ -1,0 +1,77 @@
+<p>home works!</p>
+<!-- <app-file></app-file> -->
+<div class="container mt-3">
+  <h4 style="color: red;" *ngIf="!flag">{{message}}</h4>
+  <div class="row">
+    
+    <div class="col-sm-4" *ngIf="!selectedUser">
+      <h4>Add New Books Details</h4>
+      <form #f="ngForm" (ngSubmit)="setdata(f.value)">
+        <div class="from-group">
+          <label for="">userId</label>
+          <input type="number" #id="ngModel" class="form-control" name="userId" ngModel required>
+          <div *ngIf="id.invalid && id.touched" class="text-danger">id is invalid</div>
+        </div>
+        
+        <div class="form-group">
+          <label for="">userName</label>
+          <input type="text" pattern="[a-zA-Z]*" #name="ngModel" class="form-control" name="userName" ngModel required>
+          <div *ngIf="name.invalid && name.touched" class="text-success" >username is invalid</div>
+        </div>
+        
+        <label for="">userEmail</label>
+        <input type="email" class="form-control" name="userEmail" ngModel>
+        <label for="">userSalary</label>
+        <input type="number" class="form-control" name="userSalary" ngModel>
+        <label for="">city</label>
+        <input type="text" class="form-control" name="city" ngModel>
+
+        <button class="btn btn-success mt-2">Add</button>
+      </form>
+    </div>
+     <div class="col-sm-4" *ngIf="selectedUser">
+      <h4>Update Books Details</h4>
+      <form (ngSubmit)="evalute()">
+        <label for="">userId</label>
+        <input type="number" class="form-control" name="userId" [(ngModel)]="selectedUser.userId">
+        <label for="">bookName</label>
+        <input type="text" class="form-control" name="userName" [(ngModel)]="selectedUser.userName">
+        <label for="">userEmail</label>
+        <input type="email" class="form-control" name="userEmail" [(ngModel)]="selectedUser.userEmail">
+        <label for="">userSalary</label>
+        <input type="number" class="form-control" name="userSalary" [(ngModel)]="selectedUser.userSalary">
+        <label for="">city</label>
+        <input type="text" class="form-control" name="city" [(ngModel)]="selectedUser.city">
+
+        <button class="btn btn-success mt-2" style="margin-right: 20px;">Update</button>
+        <button class="btn btn-success mt-2 " (click)="erase()">Cancle</button>
+      </form>
+    </div> 
+  </div>
+</div> 
+
+ <div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>userid</th>
+        <th>username</th>
+        <th>useremail</th>
+        <th>usersalary</th>
+        <th>city</th>
+        <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of bookdetails">
+        <td>{{i.userId}}</td>
+        <td>{{i.userName}}</td>
+        <td>{{i.userEmail}}</td>
+        <td>{{i.userSalary}}</td>
+        <td>{{i.city}}</td>
+        <td><button class="btn btn-warning" (click)="editdata(i)">edit</button></td>
+        <td><button class="btn btn-danger" (click)="deletedata(i.userId)">delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
